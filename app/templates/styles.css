@@ -1,0 +1,43 @@
+.lock_button .bk-btn-default{
+    color: #3a434a;
+    font-size:12pt;
+    background-color:white;
+	border-color: #008DA9;
+    border-width: 2px;
+}
+
+.upload_button .bk-btn-default{
+    color: #3a434a;
+    font-size:12pt;
+    background-color: white;
+	border-color: #008DA9;
+    border-width: 2px;
+}
+
+.reset_button .bk-btn-default{
+    color: #3a434a;
+    font-size:8pt;
+    background-color: white;
+	border-color: #008DA9;
+    border-width: 2px;
+}
+
+.slick-header-column {
+            background-color: white !important;
+            background-image: none !important;
+            font-family: "Helvetica";  
+  			color: #005D7B;
+  			font-size: 14px;
+          }
+          
+.slick-row {
+            background-color: white !important;
+            background-image: none !important;
+            color:black !important;
+}
+
+.bk-cell-index {
+            background-color: white !important;
+            background-image: none !important;
+            color:black !important;
+}
