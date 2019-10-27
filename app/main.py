@@ -442,7 +442,6 @@ inst_3 = Div(text = """Once youve made your selections click \
 
 
 
-
 space_25 = Spacer(min_width = 25)
 space_50 = Spacer(min_width = 50)  
 space_80 = Spacer(min_width = 80) 
@@ -471,9 +470,19 @@ class harmonize:
         self.right_keys = ['right_' + x for x in self.right_keys]
         
         self.metric_pairs = [['left_'+x[0], 'right_'+x[1]] for x in self.metric_pairs]
-               
-        merged = pd.merge(self.left_table, 
-                          self.right_table,
+        key_pairs = self.metric_pairs
+        left_metrics = []
+        right_metrics = []
+        for i in range(0, len(key_pairs)):
+            left_metrics.append(key_pairs[i][0])
+            right_metrics.append(key_pairs[i][1])
+        
+        left_ = self.left_table.groupby(self.left_keys)[left_metrics].sum().reset_index()
+        right_ = self.right_table.groupby(self.right_keys)[right_metrics].sum().reset_index()
+        
+        
+        merged = pd.merge(left_, 
+                          right_,
                           how = 'outer',
                           right_on = self.right_keys,
                           left_on = self.left_keys,
